@@ -87,9 +87,9 @@ long|>
 
 long|>
   filter(!is_aggregated(lmo_detailed_industry),
-         ym(when)>ym(max(when))-years(10))|>
+         ym(when)>ym(max(when))-years(5))|>
   ggplot(aes(x=when, y=value, color=series)) +
-  geom_line() +
+  geom_line(alpha=.5) +
   facet_wrap(~lmo_detailed_industry, scales = "free_y")+
   labs(x=NULL, y=NULL)+
   scale_y_continuous(labels = scales::number_format(scale = 1/1000, suffix = "K", big.mark = ","))
